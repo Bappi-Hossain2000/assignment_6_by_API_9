@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charming Forum</title>
+  <!-- t & dUI cdn -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- style_css -->
+  <link rel="stylesheet" href="style.css">
+  <!-- font_manrope -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+<!-- font-awesome cdn -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- css -->
+  <style>
+    .Mulish {
+      font-family: "Mulish", sans-serif;
+    }
+  </style>
+
+</head>
+<body class="Mulish ">
+  <header class="container mx-auto px-2">
+    <!-- nav_section -->
+    <nav>
+      <div class="flex justify-between py-[50px] items-center">
+
+        <div class="flex items-center ">
+          <i class="fa-solid fa-bars mr-4 lg:hidden block"></i>
+          <h1 class="text-[30px] font-extrabold">Charming</h1>
+        </div>
+
+        <div class="flex items-center">
+          <div class="tooltip">
+            <i class="fa-solid fa-house text-[#89898B] mr-6 hidden lg:block bg-[#0307121e] p-3 rounded-full"></i>
+            <span class="tooltiptext">Home</span>
+          </div>
+          <div class="tooltip">
+            <i class="fa-solid fa-pencil text-[#89898B] mr-6 hidden lg:block bg-[#0307121e] p-3 rounded-full"></i>
+            <span class="tooltiptext">edit</span>
+          </div>
+          <div class="tooltip">
+            <i class="fa-solid fa-user-plus text-[#89898B] mr-6 hidden lg:block bg-[#0307121e] p-3 rounded-full"></i>
+            <span class="tooltiptext">add</span>
+          </div>
+          <div class="tooltip">
+            <i class="fa-regular fa-font-awesome text-[#89898B] mr-6 hidden lg:block bg-[#0307121e] p-3 rounded-full"></i>
+            <span class="tooltiptext">Page</span>
+          </div>
+          <button class=" text-[#fff] lg:text-[24px] font-bold bg-[#797DFC] lg:px-6 lg:py-4 rounded-3xl">Sign In</button>
+        </div>
+
+      </div>
+    </nav>
+
+    <!-- banner_section -->
+    <div class="lg:flex justify-center bg-[url('images/bgbanner.png')] bg-no-repeat rounded-2xl h-[400px] grid-cols-1 bg-cover bg-[#12132D] gap-6">
+      <div class="flex justify-center rounded-3xl lg:p-8">
+        <div class="text-center">
+          <h1 class="text-white text-center text-[25px] font-bold lg:text-[64px] lg:font-extrabold">Welcome to the<br><span class="text-[#5b52ba]">Charming</span> Forum</h1>
+          <p class="text-white lg:font-medium my-3">Share your favorite opinion <br> and win and Charming forum coffee mug!</p>
+          <div id="remove" class="bg-slate-400  flex justify-between rounded-3xl">
+            <!-- input -->
+            <input class="w-2/3 rounded-lg text-center" id="inputF" type="text" placeholder="input">
+            <button onclick="handleSearch()" id="applyBTN" class="btn bg-[#1DD100] outline-none text-[#fff]">Apply</button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="bg-white w-[288px] lg:h-[200px] mx-auto rounded-3xl p-6 mt-8">
+
+        <div>
+          <div class="flex justify-between">
+            <p>Registered Users</p>
+            <p>01</p>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between">
+            <p>Forum</p>
+            <p>05</p>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between">
+            <p>Topics</p>
+            <p>01</p>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between">
+            <p>Replies</p>
+            <p>01</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </header>
+  
+
+
+  <main class="container mx-auto px-2">
+    <!-- Let’s Discuss_section_01 -->
+    <section class="my-10">
+      <div class="mb-5">
+        <h1 class="pb-4 text-center text-[36px] font-extrabold">Let’s Discuss</h1>
+        <p class="text-center font-medium">Yes, Join us at Charming Talks and let's embark on a journey of discovery, enlightenment, and charm together!"</p>
+      </div>
+      
+      <!-- Our New Products_img_section -->
+      
+     <div id="loading_spinner" class="text-center hidden">
+      <span class="loading loading-bars loading-xs"></span>
+      <span class="loading loading-bars loading-sm"></span>
+      <span class="loading loading-bars loading-md"></span>
+      <span class="loading loading-bars loading-lg"></span>
+     </div>
+
+        <div class="lg:flex  my-7">
+          <div id="cardContainer" class="shadow-2xl my-7 lg:w-8/12">
+
+            <!-- draft -->
+            <!-- <div class="card_1 lg:flex lg:p-2 lg:gap-2 border rounded-md lg:w-11/12">
+              <div class="relative w-4/12">
+                <div class="absolute right-0 rounded-full w-5 h-5 bg-green-500"></div>
+                <img src="img/5.png" class="w-10px" alt="">
+              </div>
+              <div class="ml-3">
+                <div class="flex gap-5">
+                  <p># Music</p>
+                  <p>Author : Awlad Hossain</p>
+                </div>
+                <h1 class="text-[20px] font-extrabold my-2">10 Kids Unaware of Their Halloween Costume</h1>
+                <p>It’s one thing to subject yourself to ha Halloween costume mishap because, hey that’s your prerogative</p>
+                <hr class="border-dashed my-7">
+               
+                <div class="flex justify-between">
+                  <div class="my-3 ">
+                    <i class="fa-regular fa-message  mr-5"><span class="text-[#000]"> 5.0</span></i>
+                    <i class="fa-regular fa-eye mr-3"><span class="text-[#000]"> 5.0</span></i>
+                    <i class="fa-regular fa-clock"><span class="text-[#000] ml-3"> 5.0</span> <span class="ml-3">min</span></i>
+                  </div>
+                  <button class="btn bg-green-400 rounded-full"><i class="fa-regular fa-envelope-open text-white"></i></button>
+                </div>
+              </div>
+            </div> -->
+
+            
+          </div>
+  
+  
+          <div class="lg:w-5/12 bg-[#f4f4f9] p-7 rounded-xl mt-11">
+            <div class="flex justify-between">
+              <h2>Title</h2>
+                <p><img class="inline" src="images/Frame.png" alt="">Mark as read (<span id="markRead">0</span>)</p>
+            </div>
+
+            <div id="titleMark">
+
+              <!-- draft -->
+              <!-- <div class="flex justify-between bg-white p-3 rounded-lg">
+                <h2 id="title">10 Kids Unaware of Their <br> Halloween Costume</h2>
+                <p><i class="fa-regular fa-eye"></i><span id="view"> 4</span></p>
+              </div> -->
+
+            </div>
+          </div>
+  
+        </div>
+
+    </section>
+
+    <!-- Join Our Forum_section_02 -->
+    <section>
+      <div class="lg:flex bg-[#12132D] rounded-2xl">
+        <div class="p-14">
+          <h1 class="text-white text-[40px] font-extrabold">Join Our Forum</h1>
+          <p class="text-white my-8">Charming Talks is a vibrant online community dedicated to fostering meaningful and engaging discussions on a wide range of topics. Whether you're passionate about literature, technology, travel, or anything in between, you'll find like-minded individuals eager to share their thoughts and insights.</p>
+          <button class="btn bg-[#797DFC] outline-none border-none rounded-3xl w-48 text-white">Registered Now</button>
+        </div>
+        <img src="images/joinforum.png" alt="">
+      </div>
+    </section>
+
+    <!-- Latest Posts_03 -->
+    <section class="my-10">
+      <div id="loading_spinner" class="text-center hidden">
+        <span class="loading loading-bars loading-xs"></span>
+        <span class="loading loading-bars loading-sm"></span>
+        <span class="loading loading-bars loading-md"></span>
+        <span class="loading loading-bars loading-lg"></span>
+       </div>
+      <div>
+        <h1 class="pb-4 text-center text-[36px] font-extrabold">Latest Posts</h1>
+        <p class="text-center font-medium">Yes,  you can visit the Charming Conversations forum directly and navigate to the <br>  "Latest Posts" section or the homepage to see the most recent discussions and contributions from members..</p>
+      </div>
+
+      <div id="latestPost" class="p-3 lg:grid grid-cols-3 gap-3">
+
+<!-- draft -->
+        <!-- <div class="border">
+          <img class="bg-slate-400 rounded-2xl mb-5" src="images/joinforum.png" alt="">
+          <p><i class="fa-regular fa-calendar-check"></i><span> 29 January 2024</span></p>
+          <h3 class="my-3 text-[#12132D] font-extrabold">What will a mars habitat force that impact in our daily life!!!</h3>
+          <p>Yes, you can run unit tests and view the results directly within the app.</p>
+          <div class="flex gap-8 my-3">
+            <img src="images/Frame.png" alt="">
+            <div>
+              <h3 class=" text-[#12132D] font-extrabold">Cameron Williamson</h3>
+              <p>Unknown</p>
+            </div>
+          </div>
+        </div> -->
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer_section -->
+
+ <footer class="bg-[#ebebf260] text-[#12132D] px-10 lg:px-20 py-16    mt-20">
+  <div class="text-center">
+    <h1 class="font-extrabold text-[36px]">Charming Forum</h1>
+    <p class="my-4">Participate in discussions, share your thoughts, and enjoy the charming atmosphere of our forum!</p>
+    <div class="flex justify-center">
+      <ul class="flex gap-4">
+        <li><i class="fa-brands fa-twitter"></i></li>
+        <li><i class="fa-brands fa-facebook"></i></li>
+        <li><i class="fa-brands fa-square-instagram"></i></li>
+        <li><i class="fa-brands fa-github"></i></li>
+      </ul>
+    </div>
+    <hr class="border-dashed my-7">
+    <p>2017, All Rights Reserved.</p>
+  </div>
+  
+ </footer>
+
+
+
+<script src="index.js"></script>
+</body>
+
+</html>
